@@ -7,7 +7,7 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.189">
+  <meta name="generator" content="quarto-1.0.36">
 
   <meta name="author" content="Lisa DeBruine">
   <title>Intro to Code Review</title>
@@ -19,15 +19,10 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -817,14 +812,35 @@ df_excluded &lt;- df |&gt; group_by(id) |&gt; filter(mean(correct) &gt;= .5)
 </div>
 </section>
 
+<section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You!</h1>
 <p><a href="https://debruine.github.io/code-review/">https://debruine.github.io/code-review/</a> (<a href="https://github.com/debruine/code-review/">code</a>)</p>
-
-<img src="images/psyteachr_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
+</section>
+<section id="demo-review" class="slide level2 smaller">
+<h2>Demo Review</h2>
+<p>DeBruine LM (2002). Facial resemblance enhances trust. Proceedings of the Royal Society of London B, 269(1498): 1307-1312. doi: <a href="https://doi.org/10.1098/rspb.2002.2034">10.1098/rspb.2002.2034</a></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/debruine_2002.png"></p>
+<p></p><figcaption>Differential behaviour towards self (grey bars) and non-self (white bars) morphs. Subjects for both morphing techniques showed more trust in self morphs than in non-self morphs ( p &lt; 0.05), but unselfish plays were not affected by facial resemblance.</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Data/code: <a href="https://osf.io/f7qws/" class="uri">https://osf.io/f7qws/</a></li>
+<li>Coding language: R</li>
+<li>Analysis type: t-tests</li>
+</ul>
+</div>
+</div>
+<p><img src="images/psyteachr_hex.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -1146,8 +1162,7 @@ df_excluded &lt;- df |&gt; group_by(id) |&gt; filter(mean(correct) &gt;= .5)
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          let href = ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
