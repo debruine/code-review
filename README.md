@@ -24,3 +24,7 @@ Intro to code review talk slides for Lisa DeBruine's talk at the University of G
 
 - View the slides online at <https://debruine.github.io/code-review/>
 - To reproduce, render `index.qmd` with [quarto](https://quarto.org/docs/tools/rstudio.html)
+
+## License
+
+CC-BY: DeBruine, Lisa (2022) Intro to Code Review. https://debruine.github.io/code-review/
